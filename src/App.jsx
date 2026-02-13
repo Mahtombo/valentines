@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Recaptcha from "./pages/Recaptcha";
+import Keypad from "./pages/Keypad";
+import Valentine from "./pages/Valentine";
+import GridBoard from "./pages/GridBoard";
+import Yeet from "./pages/yeet";
+import Love from "./pages/Love";
+import Slide from "./pages/Slide";
+import FakeProgress from "./pages/FakeProgress";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Recaptcha />} />
+      <Route path="/grid-board" element={<GridBoard />} />
+      <Route path="/keypad" element={<Keypad />} />
+      <Route path="/valentine" element={<Valentine />} />
+      <Route path="/yeet" element={<Yeet />} />
+      <Route path="/love" element={<Love />} />
+      <Route path="/slide" element={<Slide />} />
+      <Route path="/progress" element={<FakeProgress />} />
+    </Routes>
+  );
 }
-
-export default App
